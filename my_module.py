@@ -9,8 +9,9 @@ class Outliers:
         self.percentile_75 = None
         self.percentile_25 = None
     def percentiles(self):
-        self.percentile_75 = np.percentile(self.df[self.col_name], 75)
-        self.percentile_25 = np.percentile(self.df[self.col_name], 25)
+        df_nomiss = self.df[~(self.df[self.col_name].isna())]
+        self.percentile_75 = np.percentile(df_nomiss[self.col_name], 75)
+        self.percentile_25 = np.percentile(df_nomiss[self.col_name], 25)
         self.iqr = self.percentile_75 - self.percentile_25
 #I removed return self.iqr because it is not necessary
     def outliers_min(self):
@@ -19,7 +20,7 @@ class Outliers:
         return self.percentile_25 - 1.5*self.iqr
     def outliers_max(self):
         if self.iqr is None:
-            self.percentile()
+            self.percentiles()
         return self.percentile_75 + 1.5*self.iqr
     
 
