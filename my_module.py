@@ -1,5 +1,7 @@
 import pandas as pd
 import numpy as np
+import itertools
+from scipy.stats import mannwhitneyu
 
 class Outliers:
     def __init__(self,df,col_name):
@@ -41,3 +43,15 @@ class my_labelEncoder:
     def reverse_transform(self,df,col):
         reverse_dict = {v: k for k, v in self.dict_cat.items()}
         return df[col].map(reverse_dict)
+    
+def multiple_MannWitU(df, col_name, target_col):
+    categories = df[target_col].cat.categories
+    results = {}
+    for g1,g2 in itertools.combinations(categories, 2):
+        data1 = df[df[target_col] == g1][col_name]
+        data2 = df[df[target_col] == g2][col_name]
+        stat, p = mannwhitneyu(data1, data2)
+        #Add a Bonferroni correction
+        p = p * len(categories) * (len(categories) - 1) / 2
+        results[(g1,g2)] = p
+    return results
