@@ -1,4 +1,5 @@
 import pandas as pd
+import seaborn as sns
 import numpy as np
 import itertools
 from scipy.stats import mannwhitneyu
@@ -15,6 +16,7 @@ class Outliers:
         self.percentile_75 = np.percentile(df_nomiss[self.col_name], 75)
         self.percentile_25 = np.percentile(df_nomiss[self.col_name], 25)
         self.iqr = self.percentile_75 - self.percentile_25
+        return self.iqr
 #I removed return self.iqr because it is not necessary
     def outliers_min(self):
         if self.iqr is None:
@@ -55,3 +57,14 @@ def multiple_MannWitU(df, col_name, target_col):
         p = p * len(categories) * (len(categories) - 1) / 2
         results[(g1,g2)] = p
     return results
+
+def boxplot_bef_aft(y,hue):
+    fig,(ax1,ax2) = plt.subplots(1,2,figsize=(10,8))
+    sns.boxplot(x="NObeyesdad",y=y,data=train_set_df, hue=hue, ax=ax1)
+    ax1.set_title("Before imputing")
+    ax1.set_xticklabels(order_classes,rotation=90)
+    sns.boxplot(x="NObeyesdad", y=y, data=new_obesity, hue=hue,ax=ax2)
+    ax2.set_title("After imputing")
+    ax2.set_xticklabels(order_classes,rotation=90)
+    plt.xticks(rotation=90)
+    plt.show()
