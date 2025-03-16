@@ -14,4 +14,11 @@ My business questions were:
 
 - Is there a relationship between sncaking ("CAEC") and obesity? In this dataset, both *Insufficient_Weight* and *Normal_Weight* are snacking "sometimes" and "frequently" while the highest proportion of no snackers was present in *Overweight_Level_I*. Importantly, I found that these no snackers in *Overweight_Level_I* were more likely to be short males of average age (average of the entire dataset).  
 
+In other words, using ML and traditional exploration methods, I was able to discriminate a small group of individuals (43) defined by 5 dimensions (5 features):  
+- NObeyesdad: *Overweight_Level_I*;  
+- Gender: mostly Male;  
+- Age: average 21 years old;
+- Height: average 1.62m
+- CAEC (snacking): No  
+
 I hope you will enjoy reading this analysis as much as I did when discovering these insights.  
