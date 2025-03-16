@@ -1,6 +1,6 @@
 # **CodeOp Individual project**  
 
-The dataset was downloaded in [Kaggle](https://www.kaggle.com/competitions/obesity-level-prediction-fall-2024/data) where the goal of the competition was to build a predictive model with the best accuracy score to predict the weight classes.  
+The dataset was downloaded from [Kaggle](https://www.kaggle.com/competitions/obesity-level-prediction-fall-2024/data) where the goal of the competition was to build a predictive model with the best accuracy score to predict the weight classes.  
 However, I used this dataset for the *CodeOp* individual exam where the goal was to use a dataset(s) and get insights and be able to present how we deal with the dataset(s) to adress business questions.  
 I chose this dataset because of the wide presence of missing values. Hence, I had to deal first with these missing values that cannot just be removed or just imputed using classical methods (using the average or the median).  
 
