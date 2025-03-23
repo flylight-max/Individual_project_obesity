@@ -10,7 +10,7 @@ I used logistic regression to see if there were features that would individually
 My business questions were:  
 - Is there a feature other than weight that is strong enough to discriminate a weight class? I found that "Age" was the only feature strong enough to help by itself to distinguish *Insufficient_Weight* from the other classes.  
 
-- Is there a difference between males and females? I other words, if we separate the 2 gender, will we see a difference in term of feature weights? I found that "Age" in *Insufficient_weight* was actually impactful only in males. In other words, in this dataset males of *Insufficient_weight* are more likely to be younger than all the other classes and younger than the females *Insufficient_Weight*.  
+- Is there a difference between males and females? In other words, if we separate the 2 genders, will we see a difference in term of feature weights? I found that "Age" in *Insufficient_weight* was actually impactful only in males. In other words, in this dataset males of *Insufficient_weight* are more likely to be younger than all the other classes and younger than the females *Insufficient_Weight*.  
 
 - Is there a relationship between sncaking ("CAEC") and obesity? In this dataset, both *Insufficient_Weight* and *Normal_Weight* are snacking "sometimes" and "frequently" while the highest proportion of no snackers was present in *Overweight_Level_I*. Importantly, I found that these no snackers in *Overweight_Level_I* were more likely to be short males of average age (average of the entire dataset).  
 
